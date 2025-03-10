@@ -9,19 +9,23 @@ import java.util.Observable;
  *
  * @author user
  */
-public class Ticket extends Observable{
-    private String nome;
-    private TicketEstado estado;
-    private Pessoa solicitante;
+public abstract class Ticket extends Observable{
+    protected String nome;
+    protected TicketEstado estado;
+    protected Pessoa solicitante;
+    protected Servico servico;
 
+    public Ticket() {
+    }
 
-    public Ticket(String nome, Pessoa solicitante) {
+    public void setInfoTicket(Servico servico, String nome, Pessoa solicitante) {
+        this.servico =servico;
         this.estado = TicketEstadoAberto.getInstance();
         this.solicitante = solicitante;
         this.addObserver(solicitante);
         this.nome = nome;
     }
-    
+
     public void setEstado(TicketEstado estado) {
         this.estado = estado;
         setChanged();
@@ -55,6 +59,8 @@ public class Ticket extends Observable{
     public TicketEstado getEstado() {
         return estado;
     }
+
+    public abstract int calcularPrazo();
 
     public String toString() {
         return "Ticket{"+ "nome=" + '\'' + this.nome+  '\'' + ", estado=" + '\''+ this.getNomeEstado()+ '\''+'}';
