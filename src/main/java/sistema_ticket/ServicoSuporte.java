@@ -7,6 +7,7 @@ public class ServicoSuporte implements Servico{
 
         return instance;
     }
+
     @Override
     public int obterPrazo() {
         return 5;
