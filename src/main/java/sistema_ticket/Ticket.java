@@ -65,4 +65,8 @@ public abstract class Ticket extends Observable{
     public String toString() {
         return "Ticket{"+ "nome=" + '\'' + this.nome+  '\'' + ", estado=" + '\''+ this.getNomeEstado()+ '\''+'}';
     }
+
+    public Servico getServico() {
+        return servico;
+    }
 }
