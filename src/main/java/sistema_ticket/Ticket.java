@@ -15,7 +15,7 @@ public abstract class Ticket extends Observable{
     protected TicketEstado estado;
     protected Pessoa solicitante;
     protected Servico servico;
-    protected List<TicketMemento> historico = new ArrayList<>();
+    protected List<TicketMemento> historico = new ArrayList<TicketMemento>();
 
     public Ticket() {
     }

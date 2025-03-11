@@ -2,7 +2,6 @@ package state;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import sistema_ticket.*;
-
 import static org.junit.jupiter.api.Assertions.*;
 /**
  *
