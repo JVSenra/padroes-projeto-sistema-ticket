@@ -17,4 +17,8 @@ public class Pessoa implements Observer {
     public void update(Observable ticket, Object arg1) {
         this.ultimaNotificacao = this.nome + ", atualização no " + ticket.toString();
     }
+
+    public String getNome() {
+        return nome;
+    }
 }

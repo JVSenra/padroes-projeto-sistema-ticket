@@ -43,7 +43,7 @@ public abstract class Ticket extends Observable{
     public boolean tramitar() {
         return estado.tramitar(this);
     }
-    
+
     public boolean cancelar() {
         return estado.cancelar(this);
     }
@@ -66,8 +66,12 @@ public abstract class Ticket extends Observable{
 
     public abstract int calcularPrazo();
 
-    public String toString() {
-        return "Ticket{"+ "nome=" + '\'' + this.nome+  '\'' + ", estado=" + '\''+ this.getNomeEstado()+ '\''+'}';
+    public Pessoa getSolicitante() {
+        return solicitante;
+    }
+
+    public String getNome() {
+        return nome;
     }
 
     public Servico getServico() {
@@ -81,4 +85,5 @@ public abstract class Ticket extends Observable{
     public void restaurarEstado(TicketMemento memento) {
         this.estado = memento.getEstado();
     }
+    public abstract String aceitar(Visitor visitor);
 }
