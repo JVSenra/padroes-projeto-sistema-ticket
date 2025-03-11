@@ -12,7 +12,6 @@ public class VisitorTicketJSON implements Visitor{
                 "\"nome\":\"" + ticket.getNome()+ "\"," +
                 "\"solicitante\":\"" + ticket.getSolicitante().getNome() + "\","  +
                 "\"estado\":\"" + ticket.getNomeEstado() + "\"," +
-                "\"codigoVerificacao\":\"" + ticket.getCodigoVerificacao() + "\"" +
         "}";
     }
 
@@ -22,7 +21,6 @@ public class VisitorTicketJSON implements Visitor{
                 "\"nome\":\"" + ticket.getNome()+ "\"," +
                 "\"solicitante\":\"" + ticket.getSolicitante().getNome() + "\","  +
                 "\"estado\":\"" + ticket.getNomeEstado() + "\"," +
-                "\"numeroGuiche\":" + ticket.getNumeroGuiche() +
                 "}";
     }
 }

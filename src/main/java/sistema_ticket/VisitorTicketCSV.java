@@ -7,19 +7,17 @@ public class VisitorTicketCSV implements Visitor{
 
     @Override
     public String exibirTicketOnline(TicketOnline ticket) {
-        return "nome,solicitante,estado,codigoVerificacao\n"
+        return "nome,solicitante,estado\n"
                 + ticket.getNome()
                 + "," + ticket.getSolicitante().getNome()
-                + "," + ticket.getNomeEstado()
-                + "," + ticket.getCodigoVerificacao();
+                + "," + ticket.getNomeEstado();
     }
 
     @Override
     public String exibirTicketPresencial(TicketPresencial ticket) {
-        return "nome,solicitante,estado,numeroGuiche\n"
+        return "nome,solicitante,estado\n"
                 + ticket.getNome()
                 + "," + ticket.getSolicitante().getNome()
-                + "," + ticket.getNomeEstado()
-                + "," + ticket.getNumeroGuiche();
+                + "," + ticket.getNomeEstado();
     }
 }

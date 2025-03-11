@@ -81,7 +81,9 @@ public abstract class Ticket extends Observable{
     public TicketMemento salvarEstado() {
         return new TicketMemento(this.estado);
     }
-
+    public String toString() {
+        return "Ticket{"+ "nome=" + '\'' + this.getNome()+  '\'' + ", solicitante=" + '\''+ this.getSolicitante().getNome()+ '\''+", estado=" + '\''+ this.getNomeEstado()+ '\''+'}';
+    }
     public void restaurarEstado(TicketMemento memento) {
         this.estado = memento.getEstado();
     }
