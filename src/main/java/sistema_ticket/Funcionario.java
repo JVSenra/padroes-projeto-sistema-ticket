@@ -18,9 +18,9 @@ public abstract class Funcionario {
     public abstract String getDescricaoCargo();
 
     public String tramitarTicket(Ticket ticket) {
-        if (listaServicos.contains(ticket.getServico())) {
-            Execucao execucao = new Execucao(ticket);
-            return getDescricaoCargo()+": " + String.valueOf(execucao.executar(OperacaoTramitar.getInstance()));
+        Execucao execucao = new Execucao(ticket);
+        if (listaServicos.contains(ticket.getServico()) && execucao.executar(OperacaoTramitar.getInstance())) {
+            return getDescricaoCargo()+": Ticket tramitado";
         }
         else {
             if (funcionarioSuperior != null) {
@@ -33,9 +33,9 @@ public abstract class Funcionario {
         }
     }
     public String cancelarTicket(Ticket ticket) {
-        if (listaServicos.contains(ticket.getServico())) {
-            Execucao execucao = new Execucao(ticket);
-            return getDescricaoCargo()+": " + String.valueOf(execucao.executar(OperacaoCancelar.getInstance()));
+        Execucao execucao = new Execucao(ticket);
+        if (listaServicos.contains(ticket.getServico()) && execucao.executar(OperacaoCancelar.getInstance())) {
+            return getDescricaoCargo()+": Ticket cancelado";
         }
         else {
             if (funcionarioSuperior != null) {
@@ -48,9 +48,9 @@ public abstract class Funcionario {
         }
     }
     public String resolverTicket(Ticket ticket) {
-        if (listaServicos.contains(ticket.getServico())) {
-            Execucao execucao = new Execucao(ticket);
-            return getDescricaoCargo()+": " + String.valueOf(execucao.executar(OperacaoResolver.getInstance()));
+        Execucao execucao = new Execucao(ticket);
+        if (listaServicos.contains(ticket.getServico()) && execucao.executar(OperacaoResolver.getInstance())) {
+            return getDescricaoCargo()+": Ticket resolvido";
         }
         else {
             if (funcionarioSuperior != null) {
@@ -63,9 +63,9 @@ public abstract class Funcionario {
         }
     }
     public String fecharTicket(Ticket ticket) {
-        if (listaServicos.contains(ticket.getServico())) {
-            Execucao execucao = new Execucao(ticket);
-            return getDescricaoCargo()+": " + String.valueOf(execucao.executar(OperacaoFechar.getInstance()));
+        Execucao execucao = new Execucao(ticket);
+        if (listaServicos.contains(ticket.getServico()) && execucao.executar(OperacaoFechar.getInstance())) {
+            return getDescricaoCargo()+": Ticket fechado";
         }
         else {
             if (funcionarioSuperior != null) {
