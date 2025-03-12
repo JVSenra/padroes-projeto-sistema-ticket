@@ -87,5 +87,20 @@ public abstract class Ticket extends Observable{
     public void restaurarEstado(TicketMemento memento) {
         this.estado = memento.getEstado();
     }
+
+    public List<TicketMemento> getHistorico() {
+        return historico;
+    }
+
+    public String exibirHistorico() {
+        String result = "Histórico de Estados do Ticket: " + this.nome + "\n";
+
+        int i = 1;
+        for (TicketMemento memento : this.historico) {
+            result += i++ + ". " + memento.getEstado().getEstado() + "\n";
+        }
+        return result;
+    }
+
     public abstract String aceitar(Visitor visitor);
 }
