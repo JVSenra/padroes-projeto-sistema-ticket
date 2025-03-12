@@ -8,7 +8,7 @@ public class VisitorTicketCSVTest {
     @Test
     void deveTicketOnline() {
         Pessoa solicitante = new Pessoa("João");
-        Ticket ticket = TicketFactory.obterTicket("Presencial");
+        Ticket ticket = TicketFactory.obterTicket("Online");
         ticket.setInfoTicket(ServicoSuporte.getInstance(), "Ticket A", solicitante);
         VisitorTicketCSV visitor = new VisitorTicketCSV();
         assertEquals("nome,solicitante,estado\nTicket A,João,Aberto", visitor.exibir(ticket));
