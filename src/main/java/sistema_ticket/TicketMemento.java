@@ -8,6 +8,6 @@ public class TicketMemento {
     }
 
     public TicketEstado getEstado() {
-        return estado;
+        return this.estado;
     }
 }
